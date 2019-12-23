@@ -6,7 +6,6 @@
         <title>Hello!</title>
     </head>
     <body>
-    <h3>Nested hello!</h3>
     <#nested>
     </body>
     </html>
