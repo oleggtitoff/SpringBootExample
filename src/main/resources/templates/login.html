@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{login.page.title}">Title</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!-- Latest compiled and minified CSS -->
+    <link crossorigin="anonymous"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          rel="stylesheet">
+    <!-- Optional theme -->
+    <link crossorigin="anonymous"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          rel="stylesheet">
+</head>
+<body>
+<a th:href="@{/login/(lang=en)}">EN</a>
+<a th:href="@{/login/(lang=uk)}">UK</a>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-default" style="margin-top: 45px">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" th:text="#{login.page.signing.prompt}">SignIn
+                            prompt</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div th:if="${logout}">
+                            <div class="alert alert-info" role="alert"
+                                 th:text="#{login.page.logged.out.alert}">Logged out.
+                            </div>
+                        </div>
+                        <div th:if="${error}">
+                            <div class="alert alert-danger" role="alert"
+                                 th:text="#{login.page.invalid.credentials.alert}">Invalid
+                                credentials!
+                            </div>
+                        </div>
+
+                        <form method="post" th:action="@{/login}">
+                            <input name="${_csrf.parameterName}" value="${_csrf.token}"
+                                   type="hidden">
+                            <div class="form-group">
+                                <label for="username" th:text="#{login.page.username.label}">Username</label>
+                                <input type="text" class="form-control" id="username"
+                                       name="username"
+                                       th:placeholder="#{login.page.username.label}">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" th:text="#{login.page.password.label}">Password</label>
+                                <input type="password" class="form-control" id="password"
+                                       name="password"
+                                       th:placeholder="#{login.page.password.label}">
+                            </div>
+                            <button class="btn btn-default" th:text="#{login.page.submit.label}"
+                                    type="submit">Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+

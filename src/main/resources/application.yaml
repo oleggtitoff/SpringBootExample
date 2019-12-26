@@ -2,3 +2,6 @@ server:
   port: 8080
 spring:
   mandatory-file-encoding: UTF-8
+  messages:
+    basename: messages
+    fallback-to-system-locale: false
