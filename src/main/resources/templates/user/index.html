@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="#{hello.page.title}">Title</title>
+    <title th:text="#{user.main.page.title}">Title</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <!-- Latest compiled and minified CSS -->
     <link crossorigin="anonymous"
@@ -16,13 +16,13 @@
           rel="stylesheet">
 </head>
 <body>
-<a th:href="@{/hello/(lang=en)}">EN</a>
-<a th:href="@{/hello/(lang=uk)}">UK</a>
+<a th:href="@{/user/index/(lang=en)}">EN</a>
+<a th:href="@{/user/index/(lang=uk)}">UK</a>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="page-header" th:text="#{hello.page.output}">Here is no resources</h1>
+            <h1 class="page-header" th:text="#{user.main.page.output}">Here is no resources</h1>
         </div>
     </div>
 </div>
